@@ -1,6 +1,6 @@
 {
   "name": "@carable/razzle-dev-utils",
-  "version": "0.8.15-4",
+  "version": "0.8.15-5",
   "description": "Utilities and helpers for Razzle",
   "author": "Jared Palmer <jared@palmer.net>",
   "repository": "git@github.com:carable/razzle.git",
