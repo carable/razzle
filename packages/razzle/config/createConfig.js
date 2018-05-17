@@ -8,6 +8,7 @@ const nodeExternals = require('webpack-node-externals');
 const AssetsPlugin = require('assets-webpack-plugin');
 const StartServerPlugin = require('start-server-webpack-plugin');
 const FriendlyErrorsPlugin = require('razzle-dev-utils/FriendlyErrorsPlugin');
+const WriteServerPlugin = require('razzle-dev-utils/WriteServerPlugin');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -320,6 +321,7 @@ module.exports = (
       // Use watch mode
       config.watch = true;
       config.entry.unshift('webpack/hot/poll?300');
+      config.entry.unshift(require.resolve('razzle-dev-utils/hijackConsole'));
 
       const nodeArgs = [];
 
@@ -336,6 +338,10 @@ module.exports = (
         new webpack.HotModuleReplacementPlugin(),
         // Supress errors to console (we use our own logger)
         new webpack.NoEmitOnErrorsPlugin(),
+        // Output server files to build directory (required whilst using devserver)
+        new WriteServerPlugin({
+          buildDir: paths.appBuild,
+        }),
         // Automatically start the server when we are done compiling
         new StartServerPlugin({
           name: 'server.js',
@@ -375,7 +381,7 @@ module.exports = (
 
       // Configure our client bundles output. Not the public path is to 3001.
       config.output = {
-        path: paths.appBuildPublic,
+        path: paths.appBuild,
         publicPath: `http://${dotenv.raw.HOST}:${devServerPort}/`,
         pathinfo: true,
         filename: 'static/js/bundle.js',
@@ -476,9 +482,10 @@ module.exports = (
       new FriendlyErrorsPlugin({
         verbose: dotenv.raw.VERBOSE,
         target,
-        onSuccessMessage: `Your application is running at http://${
-          dotenv.raw.HOST
-        }:${dotenv.raw.PORT}`,
+        onSuccessMessage: IS_NODE
+          ? `Your application is running at http://${dotenv.raw.HOST}:${dotenv
+              .raw.PORT}`
+          : null
       }),
     ];
   }
