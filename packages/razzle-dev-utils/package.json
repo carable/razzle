@@ -10,7 +10,10 @@
     "printErrors.js",
     "FriendlyErrorsPlugin.js",
     "webpackHotDevClient.js",
-    "setPorts.js"
+    "setPorts.js",
+    "CompilationStatus.js",
+    "hijackConsole.js",
+    "WriteServerPlugin.js"
   ],
   "dependencies": {
     "chalk": "1.1.3",
