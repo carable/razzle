@@ -1,10 +1,10 @@
 {
-  "name": "babel-preset-razzle",
-  "version": "0.8.7",
+  "name": "@carable/babel-preset-razzle",
+  "version": "0.8.15-0",
   "description": "Babel presets for Razzle",
   "main": "index.js",
   "author": "jaredpalmer",
-  "repository": "git@github.com:jaredpalmer/razzle.git",
+  "repository": "git@github.com:carable/razzle.git",
   "license": "MIT",
   "files": [
     "index.js"
