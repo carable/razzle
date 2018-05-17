@@ -1,6 +1,6 @@
 {
   "name": "@carable/razzle",
-  "version": "0.8.15-0",
+  "version": "0.8.15-3",
   "description": "Build isomorphic Javascript applications with ease.",
   "repository": "git@github.com:carable/razzle.git",
   "author": "Jared Palmer <jared@palmer.net>",
@@ -29,7 +29,7 @@
     "reasonml"
   ],
   "dependencies": {
-    "@carable/razzle-dev-utils": "^0.8.15-0",
+    "@carable/razzle-dev-utils": "^0.8.15-3",
     "assets-webpack-plugin": "3.5.1",
     "autoprefixer": "7.1.1",
     "babel-core": "6.25.0",
