@@ -321,7 +321,7 @@ module.exports = (
       // Use watch mode
       config.watch = true;
       config.entry.unshift('webpack/hot/poll?300');
-      config.entry.unshift(require.resolve('razzle-dev-utils/hijackConsole'));
+      config.entry.unshift(require.resolve('@carable/razzle-dev-utils/hijackConsole'));
 
       const nodeArgs = [];
 
@@ -374,7 +374,7 @@ module.exports = (
           // the default path. If you are doing some vendor bundling, you'll need to require the razzle/polyfills
           // on your own.
           !!dotenv.raw.REACT_BUNDLE_PATH && require.resolve('./polyfills'),
-          require.resolve('razzle-dev-utils/webpackHotDevClient'),
+          require.resolve('@carable/razzle-dev-utils/webpackHotDevClient'),
           paths.appClientIndexJs,
         ].filter(Boolean),
       };

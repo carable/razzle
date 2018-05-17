@@ -117,7 +117,7 @@ function main() {
 
   // We only start requiring CompilationStatus here, because it will start redirecting console output once it's required.
   // We only want this to happen after webpack & the devserver have successfully booted up.
-  const CompilationStatus = require('razzle-dev-utils/CompilationStatus');
+  const CompilationStatus = require('@carable/razzle-dev-utils/CompilationStatus');
   CompilationStatus.startRender(multiCompiler.compilers);
 }
 

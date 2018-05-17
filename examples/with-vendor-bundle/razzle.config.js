@@ -17,7 +17,7 @@ module.exports = {
         // vendor.js will be loaded before our other entry. Razzle looks for
         // process.env.REACT_BUNDLE_PATH and will exclude the polyfill from our normal entry,
         // so we don't need to worry about including it twice.
-        require.resolve('razzle/polyfills'),
+        require.resolve('@carable/razzle/polyfills'),
         require.resolve('react'),
         require.resolve('react-dom'),
         // ... add any other vendor packages with require.resolve('xxx')

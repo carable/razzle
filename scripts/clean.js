@@ -50,21 +50,21 @@ getPackages().forEach(pkg => cleanPackages(pkg.path));
 
 // npm unlink packages
 shell.exec('yarn unlink', {
-  cwd: path.join(process.cwd(), 'packages', 'babel-preset-razzle'),
+  cwd: path.join(process.cwd(), 'packages', '@carable/babel-preset-razzle'),
 });
 logTask('npm-unlinked babel-preset-razzle\n');
 shell.exec('yarn unlink', {
-  cwd: path.join(process.cwd(), 'packages', 'razzle'),
+  cwd: path.join(process.cwd(), 'packages', '@carable/razzle'),
 });
 logTask('npm-unlinked razzle');
 
 shell.exec('yarn unlink', {
-  cwd: path.join(process.cwd(), 'packages', 'create-razzle-app'),
+  cwd: path.join(process.cwd(), 'packages', '@carable/create-razzle-app'),
 });
 logTask('npm-unlinked create-razzle-app');
 
 shell.exec('yarn unlink', {
-  cwd: path.join(process.cwd(), 'packages', 'razzle-dev-utils'),
+  cwd: path.join(process.cwd(), 'packages', '@carable/razzle-dev-utils'),
 });
 logTask('npm-unlinked razzle-dev-utils');
 
