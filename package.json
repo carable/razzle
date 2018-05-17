@@ -1,7 +1,7 @@
 {
   "private": true,
-  "bugs": "https://github.com/jaredpalmer/razzle/issues",
-  "homepage": "https://github.com/jaredpalmer/razzle#readme",
+  "bugs": "https://github.com/carable/razzle/issues",
+  "homepage": "https://github.com/carable/razzle#readme",
   "devDependencies": {
     "eslint": "^4.6.1",
     "husky": "^0.14.3",
@@ -21,7 +21,8 @@
     "postinstall": "npm run clean && npm run bootstrap",
     "changelog": "lerna-changelog",
     "format": "prettier --trailing-comma es5 --single-quote --write 'packages/*/*.js' 'packages/*/!(node_modules)/**/*.js'",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "publish": "lerna publish --registry=https://www.myget.org/F/carable-npm/npm/"
   },
   "lint-staged": {
     "*.js": [
